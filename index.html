@@ -18,12 +18,12 @@ p{color:#c9d2d5;line-height:1.5}progress{width:min(340px,75vw);height:12px;accen
 <div id="loading"><h1>Ember Sanctuary</h1><p>Preparing your dragon’s adventure</p><progress id="progress" max="1" value="0"></progress><p id="message">First visit may take a moment. Progress saves on this device.</p></div>
 <div id="error" role="alert"></div><div id="rotate">Turn your phone sideways for the best view.</div></main>
 <script>
-const config={"dataUrl": "Build/800a621398da2d7dfd1ea5861fa63107.data.unityweb", "frameworkUrl": "Build/3d1ee42ea3028657cb12ca79ab02e19e.framework.js.unityweb", "codeUrl": "Build/5e03d551ed9e9e2c71ed05cf67b373af.wasm.unityweb", "streamingAssetsUrl": "StreamingAssets", "companyName": "Kamp-Dev", "productName": "Dragon RPG", "productVersion": "1.0", "autoSyncPersistentDataPath": true};
+const config={"dataUrl": "Build/fe9e4e470f67d3c4c9f90a79cc6ff739.data.unityweb", "frameworkUrl": "Build/3d1ee42ea3028657cb12ca79ab02e19e.framework.js.unityweb", "codeUrl": "Build/f16bce239575819da5742c31395561a9.wasm.unityweb", "streamingAssetsUrl": "StreamingAssets", "companyName": "Kamp-Dev", "productName": "Dragon RPG", "productVersion": "1.0", "autoSyncPersistentDataPath": true};
 // Match Retina screens instead of stretching a lower-resolution canvas.
 config.devicePixelRatio = window.devicePixelRatio || 1;
 function showError(message){document.getElementById('loading').style.display='none';const box=document.getElementById('error');box.style.display='block';box.textContent='The game could not start. Please reload in Safari or Chrome. '+message;}
 config.showBanner=(message,type)=>{if(type==='error')showError(message);else console.warn(message);};
-const script=document.createElement('script');script.src="Build/e1c9721eb17c424402d07086af5d46b1.loader.js";
+const script=document.createElement('script');script.src="Build/2b8ca391a7eace6acef431a5d6411844.loader.js";
 script.onerror=()=>showError('The game download was interrupted.');
 script.onload=()=>createUnityInstance(document.getElementById('canvas'),config,progress=>{document.getElementById('progress').value=progress;}).then(instance=>{window.gameInstance=instance;document.getElementById('loading').style.display='none';}).catch(showError);
 document.body.appendChild(script);
