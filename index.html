@@ -1,25 +1,25 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#0d080f"><meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#101b28"><meta name="apple-mobile-web-app-capable" content="yes">
 <title>Dragon RPG - Ember Sanctuary</title>
 <style>
-*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#0d080f;color:#f3e8cf;font-family:system-ui,sans-serif}
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#101b28;color:#f3e8cf;font-family:system-ui,sans-serif}
 body{position:fixed;inset:0;overscroll-behavior:none;}
 #game{position:fixed;left:0;top:0;width:100vw;height:100dvh;overflow:hidden}
-canvas{display:block;width:100%;height:100%;background:#0d080f;touch-action:none;outline:none}
+canvas{display:block;width:100%;height:100%;background:#101b28;touch-action:none;outline:none}
 #safe-insets{position:fixed;visibility:hidden;pointer-events:none;padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)}
-#loading{position:absolute;inset:0;display:grid;place-content:center;text-align:center;background:radial-gradient(ellipse at center,#301021,#0d080f 70%);padding:24px}
+#loading{position:absolute;inset:0;display:grid;place-content:center;text-align:center;background:radial-gradient(ellipse at center,#293c49,#101b28 70%);padding:24px}
 h1{font-family:Georgia,serif;font-size:clamp(24px,4vw,42px);font-weight:500;letter-spacing:.05em;margin:0 0 12px}
-p{color:#c9b5c2;line-height:1.5}progress{width:min(340px,75vw);height:12px;accent-color:#f13a62;margin:12px auto}
-#message{font-size:14px}#error{display:none;position:absolute;inset:20%;background:#21121f;padding:24px;border:1px solid #dd466e;border-radius:12px;overflow:auto}
-#rotate{display:none;position:absolute;left:10px;right:10px;bottom:8px;text-align:center;background:#0d080fdc;border-radius:8px;padding:8px;font-size:12px;pointer-events:none}
+p{color:#c9d2d5;line-height:1.5}progress{width:min(340px,75vw);height:12px;accent-color:#d4af6f;margin:12px auto}
+#message{font-size:14px}#error{display:none;position:absolute;inset:20%;background:#172735;padding:24px;border:1px solid #d4af6f;border-radius:12px;overflow:auto}
+#rotate{display:none;position:absolute;left:10px;right:10px;bottom:8px;text-align:center;background:#101b28dc;border-radius:8px;padding:8px;font-size:12px;pointer-events:none}
 @media(orientation:portrait) and (max-width:900px){#rotate{display:block}}
 </style></head><body><div id="safe-insets" aria-hidden="true"></div><main id="game"><canvas id="canvas" tabindex="0" aria-label="Dragon RPG game"></canvas>
 <div id="loading"><h1>Ember Sanctuary</h1><p>Preparing your dragon&#39;s adventure</p><progress id="progress" max="1" value="0"></progress><p id="message">First visit may take a moment. Progress saves on this device.</p></div>
 <div id="error" role="alert"></div><div id="rotate">Turn your phone sideways for the best view.</div></main>
 <script>
-const config={"dataUrl": "Build/e1e5097cd0d7269ec89ba74d148cbc82.data.unityweb", "frameworkUrl": "Build/d1a1391a2c2d8c260db661fcbece44ac.framework.js.unityweb", "codeUrl": "Build/281d9db5702c506bc86f57814cf83d80.wasm.unityweb", "streamingAssetsUrl": "StreamingAssets", "companyName": "Kamp-Dev", "productName": "Dragon RPG", "productVersion": "1.0", "autoSyncPersistentDataPath": true};
+const config={"dataUrl": "Build/166116d91a3276797f6d4569744b095c.data.unityweb", "frameworkUrl": "Build/8afb898dc2d42b77aa06984b8965a6c1.framework.js.unityweb", "codeUrl": "Build/4e9f05fcac34a1ce5c3077418f5df030.wasm.unityweb", "streamingAssetsUrl": "StreamingAssets", "companyName": "Kamp-Dev", "productName": "Dragon RPG", "productVersion": "1.0", "autoSyncPersistentDataPath": true};
 let viewportFrame=0;
 function fitViewport(){
   viewportFrame=0;
@@ -48,7 +48,7 @@ const mobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) || (navigat
 config.devicePixelRatio = window.devicePixelRatio || 1;
 function showError(message){document.getElementById('loading').style.display='none';const box=document.getElementById('error');box.style.display='block';box.textContent='The game could not start. Please reload in Safari or Chrome. '+message;}
 config.showBanner=(message,type)=>{if(type==='error')showError(message);else console.warn(message);};
-const script=document.createElement('script');script.src="Build/d66d017745c835fc8b5cdf60ae51a1be.loader.js";
+const script=document.createElement('script');script.src="Build/2aa831de928c613f7e4426f4659d98fd.loader.js";
 script.onerror=()=>showError('The game download was interrupted.');
 script.onload=()=>createUnityInstance(document.getElementById('canvas'),config,progress=>{document.getElementById('progress').value=progress;}).then(instance=>{window.gameInstance=instance;scheduleViewport();instance.SendMessage("GamePerformance","SetMobile",mobile?"1":"0");document.getElementById('loading').style.display='none';}).catch(showError);
 document.body.appendChild(script);
