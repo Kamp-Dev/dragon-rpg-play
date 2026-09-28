@@ -2,7 +2,7 @@
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#101b28"><meta name="apple-mobile-web-app-capable" content="yes">
-<title>Dragon RPG â€” Ember Sanctuary</title>
+<title>Dragon RPG - Ember Sanctuary</title>
 <style>
 *{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#101b28;color:#f3e8cf;font-family:system-ui,sans-serif}
 body{position:fixed;inset:0;overscroll-behavior:none;}
@@ -19,7 +19,7 @@ p{color:#c9d2d5;line-height:1.5}progress{width:min(340px,75vw);height:12px;accen
 <div id="loading"><h1>Ember Sanctuary</h1><p>Preparing your dragon&#39;s adventure</p><progress id="progress" max="1" value="0"></progress><p id="message">First visit may take a moment. Progress saves on this device.</p></div>
 <div id="error" role="alert"></div><div id="rotate">Turn your phone sideways for the best view.</div></main>
 <script>
-const config={"dataUrl": "Build/d70325b0124bcb4534db6f39c465446c.data.unityweb", "frameworkUrl": "Build/f72353ad3017474aa447fa415c08c377.framework.js.unityweb", "codeUrl": "Build/08db3caf359fd1bdb06b3b5f90a57a68.wasm.unityweb", "streamingAssetsUrl": "StreamingAssets", "companyName": "Kamp-Dev", "productName": "Dragon RPG", "productVersion": "1.0", "autoSyncPersistentDataPath": true};
+const config={"dataUrl": "Build/966cee945c5430b90eea24a146ef1726.data.unityweb", "frameworkUrl": "Build/8afb898dc2d42b77aa06984b8965a6c1.framework.js.unityweb", "codeUrl": "Build/dcf6bf467abf678e4abf050a267fbc93.wasm.unityweb", "streamingAssetsUrl": "StreamingAssets", "companyName": "Kamp-Dev", "productName": "Dragon RPG", "productVersion": "1.0", "autoSyncPersistentDataPath": true};
 let viewportFrame=0;
 function fitViewport(){
   viewportFrame=0;
@@ -48,7 +48,7 @@ const mobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) || (navigat
 config.devicePixelRatio = window.devicePixelRatio || 1;
 function showError(message){document.getElementById('loading').style.display='none';const box=document.getElementById('error');box.style.display='block';box.textContent='The game could not start. Please reload in Safari or Chrome. '+message;}
 config.showBanner=(message,type)=>{if(type==='error')showError(message);else console.warn(message);};
-const script=document.createElement('script');script.src="Build/91da4ff2c8e6992883f30b0d3447ac15.loader.js";
+const script=document.createElement('script');script.src="Build/21ee2efeaa3c9b733a40c74dd13f329d.loader.js";
 script.onerror=()=>showError('The game download was interrupted.');
 script.onload=()=>createUnityInstance(document.getElementById('canvas'),config,progress=>{document.getElementById('progress').value=progress;}).then(instance=>{window.gameInstance=instance;scheduleViewport();instance.SendMessage("GamePerformance","SetMobile",mobile?"1":"0");document.getElementById('loading').style.display='none';}).catch(showError);
 document.body.appendChild(script);
