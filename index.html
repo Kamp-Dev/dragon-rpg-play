@@ -19,7 +19,7 @@ p{color:#c9d2d5;line-height:1.5}progress{width:min(340px,75vw);height:12px;accen
 <div id="loading"><h1>Ember Sanctuary</h1><p>Preparing your dragon&#39;s adventure</p><progress id="progress" max="1" value="0"></progress><p id="message">First visit may take a moment. Progress saves on this device.</p></div>
 <div id="error" role="alert"></div><div id="rotate">Turn your phone sideways for the best view.</div></main>
 <script>
-const config={"dataUrl": "Build/b47c937466ffe71c82c366ebf2150e5b.data.unityweb", "frameworkUrl": "Build/6eb17ad544ef7262655265efcba27f7b.framework.js.unityweb", "codeUrl": "Build/b0af2e78caf8daf7f28256aa67096a4e.wasm.unityweb", "streamingAssetsUrl": "StreamingAssets", "companyName": "Kamp-Dev", "productName": "Dragon RPG", "productVersion": "1.0", "autoSyncPersistentDataPath": true};
+const config={"dataUrl": "Build/24f6fcd1906e6ed598a3e7a2cb40ce96.data.unityweb", "frameworkUrl": "Build/139a90a33d0e28bd19e2c3a950c44c36.framework.js.unityweb", "codeUrl": "Build/d708d0bd83216c6f0e9ac21c5d83e93a.wasm.unityweb", "streamingAssetsUrl": "StreamingAssets", "companyName": "Kamp-Dev", "productName": "Dragon RPG", "productVersion": "1.0", "autoSyncPersistentDataPath": true};
 let viewportFrame=0;
 function fitViewport(){
   viewportFrame=0;
@@ -48,7 +48,7 @@ const mobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) || (navigat
 config.devicePixelRatio = window.devicePixelRatio || 1;
 function showError(message){document.getElementById('loading').style.display='none';const box=document.getElementById('error');box.style.display='block';box.textContent='The game could not start. Please reload in Safari or Chrome. '+message;}
 config.showBanner=(message,type)=>{if(type==='error')showError(message);else console.warn(message);};
-const script=document.createElement('script');script.src="Build/f199bce6a45fa2c0646a351540986824.loader.js";
+const script=document.createElement('script');script.src="Build/0913f19ff3221dc782b476ea3e304969.loader.js";
 script.onerror=()=>showError('The game download was interrupted.');
 script.onload=()=>createUnityInstance(document.getElementById('canvas'),config,progress=>{document.getElementById('progress').value=progress;}).then(instance=>{window.gameInstance=instance;scheduleViewport();instance.SendMessage("GamePerformance","SetMobile",mobile?"1":"0");document.getElementById('loading').style.display='none';}).catch(showError);
 document.body.appendChild(script);
