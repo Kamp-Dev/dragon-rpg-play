@@ -19,7 +19,7 @@ p{color:#c9d2d5;line-height:1.5}progress{width:min(340px,75vw);height:12px;accen
 <div id="loading"><h1>Ember Sanctuary</h1><p>Preparing your dragon&#39;s adventure</p><progress id="progress" max="1" value="0"></progress><p id="message">First visit may take a moment. Progress saves on this device.</p></div>
 <div id="error" role="alert"></div><div id="rotate">Turn your phone sideways for the best view.</div></main>
 <script>
-const config={"dataUrl": "Build/6d189b005564c3f70e1717f00e40d90a.data.unityweb", "frameworkUrl": "Build/19dcf5d77975b670fbbf13c5437abaaa.framework.js.unityweb", "codeUrl": "Build/efdbae05e83a4fc1c51cefecfe765144.wasm.unityweb", "streamingAssetsUrl": "StreamingAssets", "companyName": "Kamp-Dev", "productName": "Dragon RPG", "productVersion": "1.0", "autoSyncPersistentDataPath": true};
+const config={"dataUrl": "Build/c6e5d6f82934d6bc94048f64cd124d29.data.unityweb", "frameworkUrl": "Build/19dcf5d77975b670fbbf13c5437abaaa.framework.js.unityweb", "codeUrl": "Build/89dc44f2266d02ac20778af6398a638b.wasm.unityweb", "streamingAssetsUrl": "StreamingAssets", "companyName": "Kamp-Dev", "productName": "Dragon RPG", "productVersion": "1.0", "autoSyncPersistentDataPath": true};
 let viewportFrame=0;
 function fitViewport(){
   viewportFrame=0;
@@ -45,10 +45,10 @@ fitViewport();
 // Match Retina screens instead of stretching a lower-resolution canvas.
 const mobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) || (navigator.maxTouchPoints > 1 && /Macintosh/.test(navigator.userAgent));
 // Keep text and artwork at the screen's native resolution. Save power through pacing, not blur.
-config.devicePixelRatio = window.devicePixelRatio || 1;
+config.devicePixelRatio = mobile ? Math.min(window.devicePixelRatio || 1, 1.5) : (window.devicePixelRatio || 1);
 function showError(message){document.getElementById('loading').style.display='none';const box=document.getElementById('error');box.style.display='block';box.textContent='The game could not start. Please reload in Safari or Chrome. '+message;}
 config.showBanner=(message,type)=>{if(type==='error')showError(message);else console.warn(message);};
-const script=document.createElement('script');script.src="Build/2cbd41571d538a9c61c3b123f4552ceb.loader.js";
+const script=document.createElement('script');script.src="Build/2682437ba67f766d010d65a860d646e5.loader.js";
 script.onerror=()=>showError('The game download was interrupted.');
 script.onload=()=>createUnityInstance(document.getElementById('canvas'),config,progress=>{document.getElementById('progress').value=progress;}).then(instance=>{window.gameInstance=instance;scheduleViewport();instance.SendMessage("GamePerformance","SetMobile",mobile?"1":"0");document.getElementById('loading').style.display='none';}).catch(showError);
 document.body.appendChild(script);
